@@ -1,22 +1,24 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
 
-int	main(void)	{
+double func(double x);
 
-	double h,	z;
+int main(void){
 
-	printf("Enter two different numbers: ");
-    scanf("%lf%lf\n",	&h,	&z);
-    
-	while(h&&z!=-1){
+	double x;
 
-		printf("%f okruglim do %.1f\n",	h,	floor(h) );
-		printf("%f okruglim do %.1f\n",	z,	floor(z) );
-
-		printf("Enter two different numbers: ");
-    	scanf("%lf%lf\n",	&h,	&z);
-
+	for(int counter=1;	counter<=5;	counter++){
+		printf("Enter a floating point value: ");
+		scanf("%lf",	&x);
+		func(x);
 	}
+	return 0;
+}
+
+double func(double x){
+	int	y;
+	y=floor(x+.5);
+	printf("%.2f rounded is %d\n",	x,	y );
 
 	return	0;
 }
